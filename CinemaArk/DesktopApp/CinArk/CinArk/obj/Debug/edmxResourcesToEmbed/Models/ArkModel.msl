@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="zaro_dolgozatModelStoreContainer" CdmEntityContainer="ArkContext">
+    <EntitySetMapping Name="contact">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_id" ColumnName="name_id" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="days">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.days">
+        <MappingFragment StoreEntitySet="days">
+          <ScalarProperty Name="day" ColumnName="day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.items">
+        <MappingFragment StoreEntitySet="items">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="movie" ColumnName="movie" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="line" ColumnName="line" />
+          <ScalarProperty Name="seat" ColumnName="seat" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="lecture" ColumnName="lecture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lecture_time">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.lecture_time">
+        <MappingFragment StoreEntitySet="lecture_time">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="line">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.line">
+        <MappingFragment StoreEntitySet="line">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="line1" ColumnName="line" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="months">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.months">
+        <MappingFragment StoreEntitySet="months">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="month" ColumnName="month" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movies">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.movies">
+        <MappingFragment StoreEntitySet="movies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="lenght" ColumnName="lenght" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.orders">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="payment_mode" ColumnName="payment_mode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seats">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.seats">
+        <MappingFragment StoreEntitySet="seats">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="seat" ColumnName="seat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tickets">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.tickets">
+        <MappingFragment StoreEntitySet="tickets">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="zaro_dolgozatModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="home_address" ColumnName="home_address" />
+          <ScalarProperty Name="join_date" ColumnName="join_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

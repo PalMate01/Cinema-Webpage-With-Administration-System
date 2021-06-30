@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="zaro_dolgozatModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_id" Type="int" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="days">
+    <Key>
+      <PropertyRef Name="day" />
+    </Key>
+    <Property Name="day" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="movie" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="room" Type="int" Nullable="false" />
+    <Property Name="line" Type="int" Nullable="false" />
+    <Property Name="seat" Type="int" Nullable="false" />
+    <Property Name="month" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="day" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="lecture" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="lecture_time">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="line">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="line" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="months">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="month" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="movies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="genre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rating" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="lenght" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="release_date" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="room" Type="int" Nullable="false" />
+    <Property Name="img" Type="mediumblob" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="payment_mode" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="seats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seat" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tickets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="pwd" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="home_address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="join_date" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="contact_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="name_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="items_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="items" Type="Self.items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="items">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="items_ibfk_2">
+    <End Role="line" Type="Self.line" Multiplicity="1" />
+    <End Role="items" Type="Self.items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="line">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="items">
+        <PropertyRef Name="line" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="items_ibfk_3">
+    <End Role="seats" Type="Self.seats" Multiplicity="1" />
+    <End Role="items" Type="Self.items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="seats">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="items">
+        <PropertyRef Name="seat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orders_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="orders" Type="Self.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="zaro_dolgozatModelStoreContainer">
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="days" EntityType="Self.days" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="items" EntityType="Self.items" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="lecture_time" EntityType="Self.lecture_time" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="line" EntityType="Self.line" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="months" EntityType="Self.months" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="movies" EntityType="Self.movies" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="orders" EntityType="Self.orders" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="seats" EntityType="Self.seats" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="tickets" EntityType="Self.tickets" Schema="zaro_dolgozat" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="zaro_dolgozat" store:Type="Tables" />
+    <AssociationSet Name="contact_ibfk_1" Association="Self.contact_ibfk_1">
+      <End Role="user" EntitySet="user" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+    <AssociationSet Name="items_ibfk_1" Association="Self.items_ibfk_1">
+      <End Role="user" EntitySet="user" />
+      <End Role="items" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="items_ibfk_2" Association="Self.items_ibfk_2">
+      <End Role="line" EntitySet="line" />
+      <End Role="items" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="items_ibfk_3" Association="Self.items_ibfk_3">
+      <End Role="seats" EntitySet="seats" />
+      <End Role="items" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="orders_ibfk_1" Association="Self.orders_ibfk_1">
+      <End Role="user" EntitySet="user" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

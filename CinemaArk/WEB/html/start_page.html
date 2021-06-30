@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/slide.css">
+</head>
+<body>
+<br><br><br><br>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <a href="movies.php"><img src="css/img/start.jpg" style="width:100%"></a>
+    <h1 class="text">Üdvözlünk a cinemaArk weboldalán!</h1>
+  </div>
+
+  <div class="mySlides fade">
+    <a href="tickets.php"><img src="css/img/seats.jpg" style="width:100%"></a>
+    <div class="text">Foglalj jegyet még ma!</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="css/img/snack.png" style="width:100%">
+    <div class="text">Válaszd legjobb ajánlatainkat!</div>
+  </div>
+
+</div>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+    var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 6000);
+}
+</script>
+</body>
+</html> 

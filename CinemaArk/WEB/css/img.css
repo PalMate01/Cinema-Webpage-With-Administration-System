@@ -1,0 +1,10 @@
+.img{
+    width: 254px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card{
+    width: 254px;
+    height: 520px;
+}

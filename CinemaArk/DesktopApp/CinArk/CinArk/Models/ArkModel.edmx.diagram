@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b56ffea3600c46a3a0b3c330707b6c2b" Name="Diagram1">
+        <EntityTypeShape EntityType="zaro_dolgozatModel.contact" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.days" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.items" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.lecture_time" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.line" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.months" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.movies" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.orders" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.seats" Width="1.5" PointX="3.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.tickets" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zaro_dolgozatModel.user" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="zaro_dolgozatModel.contact_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="zaro_dolgozatModel.items_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="zaro_dolgozatModel.items_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="zaro_dolgozatModel.items_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="zaro_dolgozatModel.orders_ibfk_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

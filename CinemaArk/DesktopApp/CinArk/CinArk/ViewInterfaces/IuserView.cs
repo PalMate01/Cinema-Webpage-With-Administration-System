@@ -1,0 +1,15 @@
+﻿using CinArk.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CinArk.ViewInterfaces
+{
+    interface IuserView
+    {
+        user user { get; set; }
+        string errorMessage { get; set; }
+    }
+}
